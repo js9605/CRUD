@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'crispy_forms'
 ]
 
-CRISPY_TEMPLATE_PACK = 'bootstrap5'
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -82,8 +82,10 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'EmployeeDB',
         'USER' : 'postgres',
-        'PASSWORD' : 'mypassword',
-        'HOST' : 'localhost'
+        'PASSWORD' : 'custom_password',
+        #'HOST' : 'localhost'
+        'HOST': 'db',    # Use the service name defined in docker-compose.yml
+        'PORT': 5432,    # The default PostgreSQL port
     }
 }
 

@@ -4,7 +4,6 @@
 {% block content %}
 <form action="" method="post" autocomplete="off">
     {% csrf_token %}
-    {{ form|crispy }} 
-    // to najprawdopodniej wersja bootstrapa. Powinna b6yc 4 a jest 5
+    {{ form }} 
 </form>
 {% endblock content %}
