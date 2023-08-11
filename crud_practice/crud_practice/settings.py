@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'employee_register',
-    'crispy_forms'
+    'crispy_forms',
+    'crispy_bootstrap4'
 ]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
@@ -82,7 +83,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'EmployeeDB',
         'USER' : 'postgres',
-        'PASSWORD' : 'custom_password',
+        'PASSWORD' : 'password_replacer',
         #'HOST' : 'localhost'
         'HOST': 'db',    # Use the service name defined in docker-compose.yml
         'PORT': 5432,    # The default PostgreSQL port

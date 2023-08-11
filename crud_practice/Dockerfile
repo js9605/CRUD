@@ -7,6 +7,8 @@ WORKDIR /crud_practice
 # Install system dependencies
 RUN apt-get update && apt-get install -y postgresql-client
 
+RUN pip install crispy-bootstrap4
+
 # Skopiuj pliki aplikacji do kontenera
 COPY . /crud_practice
 
