@@ -7,7 +7,7 @@ services:
     container_name: demo-postgres #you can change this
     environment:
       - POSTGRES_USER=CustomUser
-      - POSTGRES_PASS=password_here
+      - POSTGRES_PASS=your_password_here
       - POSTGRES_DB=EmployeeDB
       - POSTGRES_PORT=5432
     ports:
@@ -18,7 +18,7 @@ services:
   #   environment:
   #     POSTGRES_DB: EmployeeDB
   #     POSTGRES_USER: postgres
-  #     POSTGRES_PASSWORD: password_here
+  #     POSTGRES_PASSWORD: somepassword
   #     POSTGRES_PORT: 5432
   #   ports:
   #     - "5432:5432"
