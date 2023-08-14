@@ -2,11 +2,26 @@ version: '3'
 
 services:
   db:
-    image: postgres:latest
+    restart: always
+    image: postgres
+    container_name: demo-postgres #you can change this
     environment:
-      POSTGRES_DB: EmployeeDB
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: password_replacer
+      - POSTGRES_USER=CustomUser
+      - POSTGRES_PASS=password_here
+      - POSTGRES_DB=EmployeeDB
+      - POSTGRES_PORT=5432
+    ports:
+      - "5432:5432"
+
+  # db:
+  #   image: postgres:latest
+  #   environment:
+  #     POSTGRES_DB: EmployeeDB
+  #     POSTGRES_USER: postgres
+  #     POSTGRES_PASSWORD: password_here
+  #     POSTGRES_PORT: 5432
+  #   ports:
+  #     - "5432:5432"
 
   web:
     build: .
@@ -19,3 +34,16 @@ services:
       - "8000:8000"
     depends_on:
       - db
+
+
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: demo-pgadmin #you can change this
+    depends_on:
+      - db
+    ports:
+      - "5051:80"
+    environment:
+      PGADMIN_DEFAULT_EMAIL: pgadmin4@pgadmin.org
+      PGADMIN_DEFAULT_PASSWORD: root
+    restart: always

@@ -16,7 +16,7 @@ COPY . /crud_practice
 RUN pip install -r requirements.txt
 
 # Odsłuchuj na porcie 8000
-EXPOSE 8000
+EXPOSE 8000 5432
 
 # Uruchom serwer Django
 CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
